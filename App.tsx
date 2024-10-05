@@ -14,6 +14,8 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 import LoginForm from './components/login/login';
+import LPGDistributorshipForm from './components/distributorships_application/registration_form';
+import Dis_App from './components/distributorships_application/dis_app';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -60,7 +62,7 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <LoginForm></LoginForm>
+        <Dis_App></Dis_App>
       </ScrollView>
     </SafeAreaView>
   );
