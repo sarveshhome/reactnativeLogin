@@ -7,16 +7,7 @@ import MainNavigation from '../../navigation/MainNavigation';
 
 const Dashboard = () => {
   return (
-    // <NavigationContainer>
     <MainNavigation></MainNavigation>
-  // </NavigationContainer>
-    // <View style={styles.container}>
-    //   <Card>
-    //     <Card.Content>
-    //       <Title>Welcome to the Dashboard</Title>
-    //     </Card.Content>
-    //   </Card>
-    // </View>
   );
 };
 
