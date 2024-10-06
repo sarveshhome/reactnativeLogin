@@ -5,7 +5,7 @@ import { TextInput, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const LPGDistributorshipForm = () => {
+const Singup = () => {
   const [formData, setFormData] = useState({
     name: '',
     fatherName: '',
@@ -182,4 +182,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LPGDistributorshipForm;
+export default Singup;

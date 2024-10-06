@@ -1,9 +1,6 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
@@ -13,9 +10,11 @@ import {
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import LoginForm from './components/login/login';
-import LPGDistributorshipForm from './components/distributorships_application/registration_form';
-import Dis_App from './components/distributorships_application/dis_app';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Dashboard from './components/Dashboard/Dashboard';
+import AuthForm from './components/Home/AuthForm';
+
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -52,19 +51,14 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
+  const  Stack = createNativeStackNavigator();
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Dis_App></Dis_App>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+        <Stack.Navigator>
+        <Stack.Screen name="AuthForm" component={AuthForm} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
