@@ -19,7 +19,7 @@ import AuthForm from './components/Home/AuthForm';
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
-
+const  Stack = createNativeStackNavigator();
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -51,12 +51,12 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-  const  Stack = createNativeStackNavigator();
+  
   return (
     <NavigationContainer>
-        <Stack.Navigator>
+      <Stack.Navigator>
         <Stack.Screen name="AuthForm" component={AuthForm} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
