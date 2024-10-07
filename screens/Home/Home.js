@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, View, StyleSheet,TouchableOpacity} from 'react-native';
+import {SafeAreaView, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {Card, Title} from 'react-native-paper';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faBars} from '@fortawesome/free-solid-svg-icons'; // Use solid
 
 import globalStyle from '../../assets/styles/globalStyle';
+import {scaleFontSize} from '../../assets/styles/scaling';
 const Home = ({navigation}) => {
   useEffect(() => {}, []);
 
@@ -15,13 +17,20 @@ const Home = ({navigation}) => {
             <View
               style={{
                 flexDirection: 'row',
-                justifyContent: 'flex-end',
-                padding: 10,
+                justifyContent: 'flex-start',
+                padding: 5,
               }}>
-              <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                <MaterialIcons name="more-vert" size={28} color="black" />
+              <TouchableOpacity
+                style={globalStyle.messageIcon}
+                onPress={() => navigation.openDrawer()}>
+                <FontAwesomeIcon
+                  icon={faBars}
+                  size={scaleFontSize(20)}
+                  color={'#898DAE'}
+                />
               </TouchableOpacity>
             </View>
+
             <Title style={styles.container}>Welcome to the Dashboard</Title>
           </Card.Content>
         </Card>
@@ -33,7 +42,7 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    padding: 20,
+    padding: 50,
     backgroundColor: '#f4f4f4',
   },
 });
