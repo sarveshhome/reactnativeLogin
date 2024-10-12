@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import Singup from './Singup';
-import Signin from './Signin';
+import Signin from './Singin';
 
 const AuthForm = () => {
   const [isSignIn, setIsSignIn] = useState(true);

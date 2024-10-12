@@ -5,7 +5,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons'; // Use solid
 
 import globalStyle from '../../assets/styles/globalStyle';
-import {scaleFontSize} from '../../assets/styles/scaling';
 const Home = ({navigation}) => {
   useEffect(() => {}, []);
 
@@ -14,24 +13,7 @@ const Home = ({navigation}) => {
       <View>
         <Card>
           <Card.Content>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                padding: 5,
-              }}>
-              <TouchableOpacity
-                style={globalStyle.messageIcon}
-                onPress={() => navigation.openDrawer()}>
-                <FontAwesomeIcon
-                  icon={faBars}
-                  size={scaleFontSize(20)}
-                  color={'#898DAE'}
-                />
-              </TouchableOpacity>
-            </View>
-
-            <Title style={styles.container}>Welcome to the Dashboard</Title>
+            <Title style={styles.titleText}>Welcome to the Dashboard</Title>
           </Card.Content>
         </Card>
       </View>
@@ -41,9 +23,16 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
+    justifyContent: 'center', // To center the title if needed
+    alignItems: 'center',      // To horizontally center the title
     padding: 50,
     backgroundColor: '#f4f4f4',
+  },
+  titleText: {
+    fontSize: 24, // Custom font size
+    color: '#333', // Custom color
+    textAlign: 'center', // Ensure text itself is centered (if multiline)
   },
 });
 

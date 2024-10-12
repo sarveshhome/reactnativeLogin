@@ -3,25 +3,37 @@ import {Routes} from './Routes';
 import Home from '../screens/Home/Home';
 import Profile from '../screens/Profile/Profile';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-
+import Header from '../screens/Header/Header';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const MainMenuNavigation = () => {
+const MainMenuNavigation = ({navigation}) => {
   return (
-    <Drawer.Navigator screenOptions={{header: () => null, headerShown: false}}>
-      <Drawer.Screen name={Routes.Home} component={Home} />
-      <Drawer.Screen name={Routes.Profile} component={Profile} />
+    <Drawer.Navigator initialRouteName={Routes.Home}>
+      <Drawer.Screen
+        name={Routes.Home}
+        component={Home}
+        options={({ navigation }) => ({ // Access navigation here
+          header: () => <Header navigation={navigation} />,
+          headerShown: true,
+        })}
+      />
+      <Drawer.Screen
+        name={Routes.Profile}
+        component={Profile}
+        options={({ navigation }) => ({ // Access navigation here
+          header: () => <Header navigation={navigation} />,
+          headerShown: true,
+        })}
+      />
     </Drawer.Navigator>
   );
 };
 
-const MainNavigation = () => {
+const MainNavigation = ({navigation}) => {
   return (
-    <Stack.Navigator
-      screenOptions={{header: () => null, headerShown: false}}
-      initialRouteName={Routes.Home}>
-      <Stack.Screen name={'Drawer'} component={MainMenuNavigation} />
+    <Stack.Navigator initialRouteName={'Drawer'}>
+      <Stack.Screen name={'Drawer'} component={MainMenuNavigation} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };
