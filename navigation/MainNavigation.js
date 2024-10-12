@@ -4,12 +4,14 @@ import Home from '../screens/Home/Home';
 import Profile from '../screens/Profile/Profile';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Header from '../screens/Header/Header';
+import Detail from '../screens/Detail/Detail';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const MainMenuNavigation = ({navigation}) => {
   return (
-    <Drawer.Navigator initialRouteName={Routes.Home}>
+    <Drawer.Navigator initialRouteName={Routes.Home} screenOptions={{ header: (props) => <Header {...props} />, headerShown: true }} // headerShown can be true or false
+    >
       <Drawer.Screen
         name={Routes.Home}
         component={Home}
@@ -32,9 +34,10 @@ const MainMenuNavigation = ({navigation}) => {
 
 const MainNavigation = ({navigation}) => {
   return (
-    <Stack.Navigator initialRouteName={'Drawer'}>
+    <Stack.Navigator screenOptions={{ header: () => null, headerShown: false }} initialRouteName={'Drawer'}>
       <Stack.Screen name={'Drawer'} component={MainMenuNavigation} options={{ headerShown: false }} />
-    </Stack.Navigator>
+      {/* <Stack.Screen name="Detail" component={Detail} />  Detail Screen Added */}
+    </Stack.Navigator>  
   );
 };
 
