@@ -7,11 +7,11 @@ const ViewDetails = ({route, navigation}) => {console.log('mks--', route)
   const {item} = route.params;
   console.log('item ===> ', item);
   return (
-    <SafeAreaView style={globalStyle.backgroundWhite}>
-    <View style={styles.container}>
+    <SafeAreaView >
+    <View >
       <Image source={item.image} style={styles.image} />
 
-      <View style={styles.detailsContainer}>
+      <View >
         {/* <Text style={styles.title}>{item.name}</Text>  */}
         <Text style={styles.location}>Location: {item.location}</Text>
         <Text style={styles.contact}>Contact: {item.contact}</Text>
@@ -19,6 +19,8 @@ const ViewDetails = ({route, navigation}) => {console.log('mks--', route)
         <TouchableOpacity 
           style={styles.backButton}
           onPress={() => navigation.goBack()}
+          activeOpacity={0.3}
+          underlayColor="#007bff"
         >
           <Text style={styles.backButtonText}>Go Back</Text>
         </TouchableOpacity>
@@ -49,12 +51,12 @@ const styles = StyleSheet.create({
   },
   location: {
     fontSize: 16,
-    color: '#c9a7a7',
+    color: '#666',
     marginBottom: 5,
   },
   contact: {
     fontSize: 16,
-    color: '#c9a7a7',
+    color: '#666',
     // color: '#666',
     marginBottom: 20,
   },
