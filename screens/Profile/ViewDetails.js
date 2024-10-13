@@ -2,20 +2,17 @@ import React from 'react';
 import {SafeAreaView, View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import globalStyle from '../../assets/styles/globalStyle';
 
-const ViewDetails = ({route, navigation}) => {console.log('mks--', route)
+const ViewDetails = ({route, navigation}) => {
   // Destructure the item passed via navigation
   const {item} = route.params;
-  console.log('item ===> ', item);
   return (
     <SafeAreaView >
-    <View >
+    <View>
       <Image source={item.image} style={styles.image} />
-
       <View >
-        {/* <Text style={styles.title}>{item.name}</Text>  */}
+        <Text style={styles.title}>{item.name}</Text> 
         <Text style={styles.location}>Location: {item.location}</Text>
         <Text style={styles.contact}>Contact: {item.contact}</Text>
-
         <TouchableOpacity 
           style={styles.backButton}
           onPress={() => navigation.goBack()}
