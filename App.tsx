@@ -55,7 +55,7 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="AuthForm" component={AuthForm} />
+        <Stack.Screen name="AuthForm" component={AuthForm} options={{headerShown:false}} />
         <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
