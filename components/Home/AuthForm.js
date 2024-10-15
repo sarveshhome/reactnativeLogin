@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Singup from './Singup';
 import Signin from './Singin';
 
+const Stack = createStackNavigator();
 const AuthForm = () => {
   const [isSignIn, setIsSignIn] = useState(true);
 
