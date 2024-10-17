@@ -44,12 +44,11 @@ export default function LoginForm() {
       ...formData,
       [key]: value,
     });
-  };
-  
+  };  
   return (
     <SafeAreaView style={styles.container}>
       <Image source={logo} style={styles.image} resizeMode="contain" />
-      <Text style={styles.title}>Login</Text>
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.input}
@@ -68,21 +67,23 @@ export default function LoginForm() {
           autoCorrect={false}
           autoCapitalize="none"
         />
-      </View>
-      <View style={styles.rememberView}>
-        <View style={styles.switch}>
+         <View style={styles.switch}>
           <Switch
             value={click}
             onValueChange={setClick}
             trackColor={{true: 'green', false: 'gray'}}
           />
           <Text style={styles.rememberText}>Remember Me</Text>
-        </View>
-        <View>
+          <View>
           <Pressable onPress={() => Alert.alert('Forget Password!')}>
             <Text style={styles.forgetText}>Forgot Password?</Text>
           </Pressable>
         </View>
+        </View>
+      </View>
+      <View style={styles.rememberView}>
+       
+        
       </View>
 
       <View style={styles.buttonView}>
@@ -90,12 +91,13 @@ export default function LoginForm() {
           <Text style={styles.buttonText}>LOGIN</Text>
         </Pressable>
         <Text style={styles.optionsText}>OR LOGIN WITH</Text>
-      </View>
-
-      <View style={styles.mediaIcons}>
+        <View style={styles.mediaIcons}>
         <Image source={facebook} style={styles.icons} />
         <Image source={linkedin} style={styles.icons} />
       </View>
+      </View>
+
+      
 
       <Text style={styles.footerText}>
         Don't Have Account?<Text style={styles.signup}> Sign Up</Text>
