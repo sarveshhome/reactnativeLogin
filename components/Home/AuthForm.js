@@ -14,9 +14,7 @@ const AuthForm = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        {isSignIn ? 'Sign In' : 'Sign Up'}
-      </Text>
+     
       {/* Form fields for either sign in or sign up */}
       <View style={styles.form}>
         {isSignIn ? <Signin /> : <Singup />}

@@ -2,7 +2,10 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container : {
       alignItems : "center",
+      display:'flex',
+      justifyContent: 'flex-start',
       paddingTop: 40,
+      rowGap:25
     },
     image : {
       height : 160,
