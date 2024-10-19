@@ -19,11 +19,11 @@ const AuthForm = () => {
       <View style={styles.form}>
         {isSignIn ? <Signin /> : <Singup />}
       </View>
-      {/* <View style={styles.buttonView}>
+      <View style={styles.buttonView}>
         <Pressable style={styles.button} onPress={toggleForm}>
           <Text style={styles.buttonText}>{isSignIn ? 'Sign Up' : 'Sign In'}</Text>
         </Pressable>
-      </View> */}
+      </View>
       </View>
   );
 };
