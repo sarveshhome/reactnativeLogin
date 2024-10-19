@@ -50,22 +50,23 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   buttonView :{
-    width :"100%",
-    paddingHorizontal : 50
+    width :"30%",
+    paddingHorizontal : 10,
+    //button center
+    justifyContent:'center' 
+
   },
   button : {
-    backgroundColor : "blue",
-    height : 45,
-    borderColor : "gray",
-    borderWidth  : 1,
-    borderRadius : 5,
-    alignItems : "center",
-    justifyContent : "center"
+    backgroundColor: 'blue', // Example background color
+    paddingHorizontal: 20, // Adjust horizontal padding
+    paddingVertical: 10,   // Adjust vertical padding
+    borderRadius: 5,  
+    justifyContent:'center'
   },
   buttonText : {
-    color : "white"  ,
-    fontSize: 18,
-    fontWeight : "bold"
+    color: 'white',
+    fontSize: 16,           // Adjust font size
+    fontWeight: 'bold',  
   },
 });
 
