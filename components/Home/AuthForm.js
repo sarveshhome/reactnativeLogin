@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet,Pressable } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Singup from './Singup';
 import Signin from './Singin';
@@ -19,17 +19,21 @@ const AuthForm = () => {
       <View style={styles.form}>
         {isSignIn ? <Signin /> : <Singup />}
       </View>
-      <Button title={isSignIn ? 'Sign Up' : 'Sign In'} onPress={toggleForm} />
-    </View>
+      <View style={styles.buttonView}>
+        <Pressable style={styles.button} onPress={toggleForm}>
+          <Text style={styles.buttonText}>{isSignIn ? 'Sign Up' : 'Sign In'}</Text>
+        </Pressable>
+      </View>
+      </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
+    display:'flex'
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // padding: 20,
   },
   title: {
     fontSize: 24,
@@ -44,6 +48,24 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     padding: 10,
     marginBottom: 10,
+  },
+  buttonView :{
+    width :"100%",
+    paddingHorizontal : 50
+  },
+  button : {
+    backgroundColor : "blue",
+    height : 45,
+    borderColor : "gray",
+    borderWidth  : 1,
+    borderRadius : 5,
+    alignItems : "center",
+    justifyContent : "center"
+  },
+  buttonText : {
+    color : "white"  ,
+    fontSize: 18,
+    fontWeight : "bold"
   },
 });
 

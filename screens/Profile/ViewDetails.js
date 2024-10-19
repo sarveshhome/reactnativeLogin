@@ -7,7 +7,7 @@ const ViewDetails = ({route, navigation}) => {
   const {item} = route.params;
   return (
     <SafeAreaView >
-    <View>
+    <View style={styles.container}>
       <Image source={item.image} style={styles.image} />
       <View >
         <Text style={styles.title}>{item.name}</Text> 
@@ -29,7 +29,7 @@ const ViewDetails = ({route, navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     padding: 20,
   },
   image: {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
   },
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
   backButton: {
     backgroundColor: '#007bff',
     padding: 15,
-    borderRadius: 5,
     alignItems: 'center',
+    borderRadius: 22
   },
   backButtonText: {
     color: '#fff',

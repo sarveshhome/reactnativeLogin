@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import styles from './style';
 const logo = require('../../assets/images/logo.png');
 const facebook = require('../../assets/images/facebook.png');
-const linkedin = require('../../assets/images/linkedin.png');
+const linkedin = require('../../assets/images/circle-linkedin-512.webp');
 
 export default function LoginForm() {
   const [click, setClick] = useState(false);
@@ -52,7 +52,7 @@ export default function LoginForm() {
       <View style={styles.inputView}>
         <TextInput
           style={styles.input}
-          placeholder="EMAIL OR USERNAME"
+          placeholder="Email or Username"
           value={username}
           onChangeText={(value) => handleInputChange('username', value)}
           autoCorrect={false}
@@ -60,7 +60,7 @@ export default function LoginForm() {
         />
         <TextInput
           style={styles.input}
-          placeholder="PASSWORD"
+          placeholder="Password"
           secureTextEntry
           value={password}
           onChangeText={(value) => handleInputChange('password', value)}
@@ -88,9 +88,9 @@ export default function LoginForm() {
 
       <View style={styles.buttonView}>
         <Pressable style={styles.button} onPress={signInHandler}>
-          <Text style={styles.buttonText}>LOGIN</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </Pressable>
-        <Text style={styles.optionsText}>OR LOGIN WITH</Text>
+        <Text style={styles.optionsText}>or Login with</Text>
         <View style={styles.mediaIcons}>
         <Image source={facebook} style={styles.icons} />
         <Image source={linkedin} style={styles.icons} />
@@ -100,7 +100,8 @@ export default function LoginForm() {
       
 
       <Text style={styles.footerText}>
-        Don't Have Account?<Text style={styles.signup}> Sign Up</Text>
+        Don't Have Account?
+          <Text style={styles.signup}> Sign Up</Text>
       </Text>
     </SafeAreaView>
   );

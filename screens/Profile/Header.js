@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     elevation: 4, // Add shadow for separation
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',

@@ -22,9 +22,11 @@ const ProfileList = ({ navigation }) => {
     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ViewDetails', { item })}>
       <Image source={item.image} style={styles.cardImage} />
       <View style={styles.cardContent}>
-        <Text style={styles.cardTitle}>{item.name}</Text>
-        <Text style={styles.cardLocation}>📍 {item.location}</Text>
-        <Text style={styles.cardContact}>☎️ {item.contact}</Text>
+        <View>
+          <Text style={styles.cardTitle}>{item.name}</Text>
+          <Text style={styles.cardLocation}>📍 {item.location}</Text>
+          <Text style={styles.cardContact}>☎️ {item.contact}</Text>
+        </View>
         <View style={styles.cardButtonContainer}>
           <TouchableOpacity
             onPress={() => navigation.navigate('ViewDetails', { item })} // Navigate to ViewDetails
@@ -79,13 +81,15 @@ const Profile = ({ navigation }) => {
       <Header />
 
       {/* Profile Heading */}
-      <Text style={styles.profileHeader}>Gas Distribution Centers</Text>
-
-    <ProfileStack.Navigator screenOptions={{ headerShown: false }}>
-        <ProfileStack.Screen name="ProfileList" component={ProfileList} /> 
-        <ProfileStack.Screen name="ViewDetails" component={ViewDetails} /> 
-      </ProfileStack.Navigator>
+      {/*s <Text style={styles.profileHeader}>Gas Distribution Centers</Text> */}
+      <View style={styles.profileContainer} ></View>
+        <ProfileStack.Navigator screenOptions={{ headerShown: false }}>
+            <ProfileStack.Screen name="ProfileList" component={ProfileList} /> 
+            <ProfileStack.Screen name="ViewDetails" component={ViewDetails} /> 
+        </ProfileStack.Navigator>
+     
     </SafeAreaView>
+   
   );
 };
 
@@ -98,6 +102,9 @@ const styles = StyleSheet.create({
   columnWrapper: {
     justifyContent: 'space-between',
     marginBottom: 15,
+  },
+  profileContainer:{
+    marginTop: 20
   },
   profileHeader: {
     fontSize: 24,
@@ -115,6 +122,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    display:'flex',
+    justifyContent:'space-between'
   },
   cardImage: {
     width: '100%',
@@ -124,7 +133,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   cardContent: {
-    padding: 10,
+    padding: 20,
   },
   cardTitle: {
     fontSize: 16,
@@ -145,12 +154,14 @@ const styles = StyleSheet.create({
   cardButtonContainer: {
     alignItems: 'center',
     marginTop: 10,
+    display:'flex',
+    justifyContent:'space-between'
   },
   cardButton: {
     backgroundColor: '#007bff',
     paddingVertical: 8,
     paddingHorizontal: 15,
-    borderRadius: 5,
+    borderRadius: 18,
   },
   cardButtonText: {
     color: '#fff',

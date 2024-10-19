@@ -151,9 +151,10 @@ const Singup = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#f4f4f4',
+    display:'flex',
+    paddingTop: 40,
+    rowGap:25,
+    fontWeight: 100
   },
   card: {
     marginBottom: 20,
