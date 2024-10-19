@@ -36,27 +36,29 @@ const Home = ({ navigation }) => {
   const totalVolume = gasStationData.reduce((sum, station) => sum + station.volume, 0);
 
   return (
-    <SafeAreaView style={globalStyle.backgroundWhite}>
+    <SafeAreaView style={globalStyle.backgroundWhite}>       
       <ScrollView contentContainerStyle={styles.container}>
         {/* Header Title */}
-        <Card>
-          <Card.Content>
-            <Title style={styles.titleText}>Gas Station Dashboard</Title>
-            <Paragraph>Overview of revenue, profit/loss, and volume</Paragraph>
-          </Card.Content>
-        </Card>
+        <View>
+          <Card style={styles.summaryCard}>
+            <Card.Content>
+              <Title style={styles.titleText}>Gas Station Dashboard</Title>
+              <Paragraph style={styles.subTitle}>Overview of revenue, profit/loss, and volume</Paragraph>
+            </Card.Content>
+          </Card>
+        </View>
 
         {/* Summary Cards */}
         <View style={styles.summaryContainer}>
           <Card style={styles.summaryCard}>
             <Card.Content>
-              <Title>Total Revenue</Title>
+              <Title style={styles.summaryHeader}>Total Revenue</Title>
               <Text style={styles.summaryText}>${totalRevenue}</Text>
             </Card.Content>
           </Card>
           <Card style={styles.summaryCard}>
             <Card.Content>
-              <Title>Total Profit</Title>
+              <Title style={styles.summaryHeader}>Total Profit</Title>
               <Text style={[styles.summaryText, { color: totalProfit > 0 ? '#4CAF50' : '#f44336' }]}>
                 ${totalProfit}
               </Text>
@@ -64,7 +66,7 @@ const Home = ({ navigation }) => {
           </Card>
           <Card style={styles.summaryCard}>
             <Card.Content>
-              <Title>Total Volume</Title>
+              <Title style={styles.summaryHeader}>Total Volume</Title>
               <Text style={styles.summaryText}>{totalVolume} Liters</Text>
             </Card.Content>
           </Card>
@@ -74,14 +76,14 @@ const Home = ({ navigation }) => {
         <View style={styles.chartContainer}>
           <Text style={styles.chartTitle}>Profit/Loss Breakdown</Text>
           <PieChart
-            data={pieData}
-            width={screenWidth - 40}
-            height={220}
-            chartConfig={chartConfig}
-            accessor="population"
-            backgroundColor="transparent"
-            paddingLeft="5"
-            absolute
+           data={pieData}
+           width={screenWidth - 20} // Adjust width to better fit
+           height={180} // Slightly reduce the height
+           chartConfig={chartConfig}
+           accessor="population"
+           backgroundColor="transparent"
+           paddingLeft="0" // Remove padding if it's not needed
+           absolute // Optional: Makes the labels overlay the chart directly
           />
         </View>
 
@@ -115,31 +117,44 @@ const chartConfig = {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 18,
   },
   titleText: {
-    fontSize: 24,
+    fontSize: 22,
     color: '#333',
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: 0,
+  },
+  subTitle: {
+    fontSize:12,
+    textAlign: 'center'
   },
   summaryContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+    textAlign:'center'
   },
   summaryCard: {
     flex: 1,
     marginHorizontal: 5,
+    padding:0,
+    textAlign:"center"
   },
   summaryText: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
     marginTop: 5,
   },
+  summaryHeader:{
+    fontSize: 16,
+    lineHeight:22
+  },
   chartContainer: {
+    gap:12,
     marginTop: 30,
     alignItems: 'center',
+    paddingHorizontal: 10, // Reduce padding around the container
+    paddingVertical: 5, // Reduce vertical space if needed
   },
   chartTitle: {
     fontSize: 18,

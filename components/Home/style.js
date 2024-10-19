@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
       display:'flex',
       justifyContent: 'flex-start',
       paddingTop: 40,
-      rowGap:25
+      rowGap:25,
+      fontWeight: 100
     },
     image : {
       height : 160,
@@ -22,15 +23,16 @@ const styles = StyleSheet.create({
     inputView : {
       gap : 15,
       width : "100%",
+      paddingTop:60,
       paddingHorizontal : 40,
-      marginBottom  :5
+      marginBottom:5
     },
     input : {
-      height : 50,
+      height : 45,
       paddingHorizontal : 20,
-      borderColor : "blue",
+      borderColor : "gray",
       borderWidth : 1,
-      borderRadius: 7
+      borderRadius: 16
     },
     rememberView : {
       width : "100%",
@@ -48,7 +50,8 @@ const styles = StyleSheet.create({
       
     },
     rememberText : {
-      fontSize: 13
+      fontSize: 13,
+      paddingRight:12
     },
     forgetText : {
       fontSize : 11,
@@ -56,16 +59,17 @@ const styles = StyleSheet.create({
     },
     button : {
       backgroundColor : "blue",
-      height : 45,
+      height : 40,
+      width: 100,
       borderColor : "gray",
-      borderWidth  : 1,
-      borderRadius : 5,
+      borderRadius : 20,
       alignItems : "center",
-      justifyContent : "center"
+      justifyContent : "center",
+      margin:'auto'
     },
     buttonText : {
       color : "white"  ,
-      fontSize: 18,
+      fontSize: 13,
       fontWeight : "bold"
     }, 
     buttonView :{
@@ -77,26 +81,26 @@ const styles = StyleSheet.create({
       paddingVertical : 10,
       color : "gray",
       fontSize : 13,
-      marginBottom : 6
+      marginBottom : 2,
     },
     mediaIcons : {
       flexDirection : "row",
-      gap : 15,
+      gap : 8,
       alignItems: "center",
       justifyContent : "center",
       marginBottom : 23
     },
     icons : {
-      width : 40,
-      height: 40,
+      width: 25,
+      height : 25,
     },
     footerText : {
-      textAlign: "center",
       color : "gray",
+      display:'flex',
+      alignItems:"center"
     },
     signup : {
       color : "red",
-      fontSize : 13
     }
   })
 
