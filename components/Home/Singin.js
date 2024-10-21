@@ -95,9 +95,7 @@ export default function LoginForm() {
         <Image source={facebook} style={styles.icons} />
         <Image source={linkedin} style={styles.icons} />
       </View>
-      </View>
-
-      
+      </View>     
 
       <Text style={styles.footerText}>
         Don't Have Account?

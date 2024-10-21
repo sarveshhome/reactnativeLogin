@@ -66,7 +66,7 @@ const Home = ({ navigation }) => {
           </Card>
           <Card style={styles.summaryCard}>
             <Card.Content>
-              <Title style={styles.summaryHeader}>Total Volume</Title>
+              <Title style={styles.summaryHeader}>Total Volume </Title>
               <Text style={styles.summaryText}>{totalVolume} Liters</Text>
             </Card.Content>
           </Card>

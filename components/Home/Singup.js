@@ -36,7 +36,7 @@ const Singup = () => {
       <Card style={styles.card}>
         <Card.Content>
           <Title style={styles.title}>LPG Distributorship Application</Title>
-          <Paragraph>Fill out the form below to apply for an LPG distributorship.</Paragraph>
+          <Paragraph style={styles.subTitle}>Fill out the form below to apply for an LPG distributorship.</Paragraph>
         </Card.Content>
       </Card>
 
@@ -48,6 +48,8 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('name', value)}
           left={<TextInput.Icon name="account" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
+          contentStyle={{ paddingLeft: 5 }}
         />
 
         <TextInput
@@ -57,6 +59,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('fatherName', value)}
           left={<TextInput.Icon name="account" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         <TextInput
@@ -66,6 +69,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('dob', value)}
           left={<TextInput.Icon name="calendar-today" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         <TextInput
@@ -75,6 +79,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('address', value)}
           left={<TextInput.Icon name="home" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         <TextInput
@@ -85,6 +90,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('contactNumber', value)}
           left={<TextInput.Icon name="phone" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         <TextInput
@@ -95,20 +101,22 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('email', value)}
           left={<TextInput.Icon name="email" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         {/* Category Picker */}
-        <Picker
-          selectedValue={formData.category}
-          onValueChange={(value) => handleInputChange('category', value)}
-          style={styles.picker}>
-          <Picker.Item label="Select Category" value="" />
-          <Picker.Item label="SC" value="SC" />
-          <Picker.Item label="ST" value="ST" />
-          <Picker.Item label="OBC" value="OBC" />
-          <Picker.Item label="General" value="General" />
-        </Picker>
-
+        <View style={{ borderRadius: 16, overflow: 'hidden', borderWidth: 1, borderColor: '#ccc',marginBottom: 15, }}>
+          <Picker
+            selectedValue={formData.category}
+            onValueChange={(value) => handleInputChange('category', value)}
+            style={styles.picker}>
+            <Picker.Item label="Select Category" value="" />
+            <Picker.Item label="SC" value="SC" />
+            <Picker.Item label="ST" value="ST" />
+            <Picker.Item label="OBC" value="OBC" />
+            <Picker.Item label="General" value="General" />
+          </Picker>
+        </View>
         <TextInput
           label="Type of Distributorship"
           mode="outlined"
@@ -116,6 +124,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('distributorshipType', value)}
           left={<TextInput.Icon name="store" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         <TextInput
@@ -125,6 +134,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('landDetails', value)}
           left={<TextInput.Icon name="map" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
 
         <TextInput
@@ -134,6 +144,7 @@ const Singup = () => {
           onChangeText={(value) => handleInputChange('financialStatus', value)}
           left={<TextInput.Icon name="currency-usd" />}
           style={styles.input}
+          theme={{ roundness: 18 }}
         />
       </View>
 
@@ -154,28 +165,34 @@ const styles = StyleSheet.create({
     display:'flex',
     paddingTop: 40,
     rowGap:25,
-    fontWeight: 100
+    fontWeight: 100,
+    padding:16
   },
   card: {
     marginBottom: 20,
+    textAlign:'center'
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  subTitle:{
+    textAlign: 'center'
+  },
   inputContainer: {
     marginVertical: 10,
   },
   input: {
     marginBottom: 15,
+    borderRadius: 16,
+    marginLeft:5
   },
   picker: {
-    marginBottom: 20,
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 4,
+    borderRadius: 16,
   },
   submitButton: {
     marginTop: 20,
