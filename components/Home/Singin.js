@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import styles from './style';
+
 const logo = require('../../assets/images/logo.png');
 const facebook = require('../../assets/images/facebook.png');
 const linkedin = require('../../assets/images/circle-linkedin-512.webp');
@@ -81,28 +82,17 @@ export default function LoginForm() {
         </View>
         </View>
       </View>
-      <View style={styles.rememberView}>
-       
-        
-      </View>
-
+      <View style={styles.rememberView}></View>
       <View style={styles.buttonView}>
         <Pressable style={styles.button} onPress={signInHandler}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Signin</Text>
         </Pressable>
-        <Text style={styles.optionsText}>or Login with</Text>
+        <Text style={styles.optionsText}>or Signin with</Text>
         <View style={styles.mediaIcons}>
         <Image source={facebook} style={styles.icons} />
         <Image source={linkedin} style={styles.icons} />
       </View>
       </View>
-
-      
-
-      <Text style={styles.footerText}>
-        Don't Have Account?
-          <Text style={styles.signup}> Sign Up</Text>
-      </Text>
     </SafeAreaView>
   );
 }

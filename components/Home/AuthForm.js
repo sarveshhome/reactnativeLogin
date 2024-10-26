@@ -19,9 +19,9 @@ const AuthForm = () => {
       <View style={styles.form}>
         {isSignIn ? <Signin /> : <Singup />}
       </View>
-      <View style={styles.buttonView}>
-        <Pressable style={styles.button} onPress={toggleForm}>
-          <Text style={styles.buttonText}>{isSignIn ? 'Sign Up' : 'Sign In'}</Text>
+      <View style={styles.footerText}>
+        <Pressable style={styles.footerText} onPress={toggleForm}>
+          <Text style={styles.signup}>{isSignIn ? 'Don\'t have account Sign Up' : 'Sign In'}</Text>
         </Pressable>
       </View>
       </View>
@@ -29,9 +29,9 @@ const AuthForm = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    display:'flex'
-    // justifyContent: 'center',
+  container: { 
+    display:'flex',
+    justifyContent: 'center',
     // alignItems: 'center',
     // padding: 20,
   },
@@ -67,6 +67,15 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight : "bold"
   },
+  footerText : {
+    alignItems: "center",
+    color : "gray",
+    display:'flex',
+    alignItems:"center"
+  },
+  signup : {
+    color : "red",
+  }
 });
 
 export default AuthForm;

@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       alignItems : "center",
       flexDirection : "row",
-      marginBottom : 8
     },
     switch :{
       flexDirection : "row",
@@ -58,11 +57,11 @@ const styles = StyleSheet.create({
       color : "red"
     },
     button : {
-      backgroundColor : "blue",
+      borderRadius: 8,
+      alignSelf: 'center',
+      backgroundColor: '#1976d2',
+      width: '80%',
       height : 40,
-      width: 100,
-      borderColor : "gray",
-      borderRadius : 20,
       alignItems : "center",
       justifyContent : "center",
       margin:'auto'
@@ -94,14 +93,21 @@ const styles = StyleSheet.create({
       width: 25,
       height : 25,
     },
-    footerText : {
-      color : "gray",
-      display:'flex',
-      alignItems:"center"
+    submitButton: {
+      marginTop: 25,
+      borderRadius: 8,
+      alignSelf: 'center',
+      backgroundColor: '#1976d2',
+      width: '80%',
     },
-    signup : {
-      color : "red",
-    }
+    submitButtonContent: {
+      paddingVertical: 8,
+    },
+    submitButtonLabel: {
+      fontSize: 16,
+      fontWeight: '600',
+      color: '#fff',
+    },
   })
 
   export default styles;
