@@ -14,6 +14,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Dashboard from './components/Dashboard/Dashboard';
 import AuthForm from './components/Home/AuthForm';
+import Home from './components/Home/Welcome';
+import FirstScreen from './components/Home/FirstScreen';
+import Welcome from './components/Home/Welcome';
+import FirstPage from './screens/FirstScreen/FirstPage';
+import Singup from './components/Home/Singup';
+import LoginForm from './components/Home/Singin';
+import Login from './screens/Login/Login';
+import SignUp from './screens/SignUp/SignUp';
+import SetPassword from './screens/SetPassword/SetPassword';
 
 
 type SectionProps = PropsWithChildren<{
@@ -55,6 +64,7 @@ function App(): React.JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='SetPassword' component={SetPassword} options={{headerShown:false}} />
         <Stack.Screen name="AuthForm" component={AuthForm} options={{headerShown:false}} />
         <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false }} />
       </Stack.Navigator>

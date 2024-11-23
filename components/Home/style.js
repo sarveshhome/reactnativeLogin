@@ -1,103 +1,66 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
-    container : {
-      alignItems : "center",
-      display:'flex',
-      justifyContent: 'flex-start',
-      paddingTop: 40,
-      rowGap:25
-    },
-    image : {
-      height : 160,
-      width : 170
-    },
-    title : {
-      fontSize : 30,
-      fontWeight : "bold",
-      textTransform : "uppercase",
-      textAlign: "center",
-      paddingVertical : 40,
-      color : "blue"
-    },
-    inputView : {
-      gap : 15,
-      width : "100%",
-      paddingHorizontal : 40,
-      marginBottom  :5
-    },
-    input : {
-      height : 50,
-      paddingHorizontal : 20,
-      borderColor : "blue",
-      borderWidth : 1,
-      borderRadius: 7
-    },
-    rememberView : {
-      width : "100%",
-      paddingHorizontal : 50,
-      justifyContent: "space-between",
-      alignItems : "center",
-      flexDirection : "row",
-      marginBottom : 8
-    },
-    switch :{
-      flexDirection : "row",
-      gap : 1,
-      justifyContent : "center",
-      alignItems : "center"
-      
-    },
-    rememberText : {
-      fontSize: 13
-    },
-    forgetText : {
-      fontSize : 11,
-      color : "red"
-    },
-    button : {
-      backgroundColor : "blue",
-      height : 45,
-      borderColor : "gray",
-      borderWidth  : 1,
-      borderRadius : 5,
-      alignItems : "center",
-      justifyContent : "center"
-    },
-    buttonText : {
-      color : "white"  ,
-      fontSize: 18,
-      fontWeight : "bold"
-    }, 
-    buttonView :{
-      width :"100%",
-      paddingHorizontal : 50
-    },
-    optionsText : {
-      textAlign : "center",
-      paddingVertical : 10,
-      color : "gray",
-      fontSize : 13,
-      marginBottom : 6
-    },
-    mediaIcons : {
-      flexDirection : "row",
-      gap : 15,
-      alignItems: "center",
-      justifyContent : "center",
-      marginBottom : 23
-    },
-    icons : {
-      width : 40,
-      height: 40,
-    },
-    footerText : {
-      textAlign: "center",
-      color : "gray",
-    },
-    signup : {
-      color : "red",
-      fontSize : 13
-    }
-  })
+  container: {
+    display: 'flex',
+    alignItems: "center",
+    justifyContent: 'center',
+    padding: 12,
+    height: "100%",
+    backgroundColor: "#F5CB58",
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "900",
+    textAlign: "center",
+    color: "#fff",
 
-  export default styles;
+  },
+  titleRK: {
+    color: '#E95322',           // Color for "RK"
+  },
+  titleFineArts: {
+    color: '#fff',          // Color for "Fine Arts"
+  },
+  innerContainer: {
+    padding: 22,
+    display: 'flex',
+    alignItems: "center"
+  },
+  logo: {
+    width: 220
+  },
+  backgroundImage: {
+    height: '100%',
+    position: "relative",
+    width: 393,
+    height: 852,
+    /* Yellow Base */
+    background: "#F5CB58",
+    borderRadius: 20
+
+  },
+  sketch: {
+    width: 200
+  },
+  button: {
+    width: 250,
+    // marginHorizontal: 5,
+    borderRadius: 8,       // Rounded corners
+    overflow: 'hidden',
+    // marginBottom: 15,
+    backgroundColor: '#008CBA',  // Dark blue color
+    // paddingVertical: 10,
+    paddingHorizontal: 10,
+    textAlign: 'center',
+    // Shadow for iOS
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    justifyContent: 'center',
+    // Shadow for Android
+    elevation: 8,
+  },
+})
+
+export default styles;
