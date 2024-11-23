@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import {
     Text,
     View,
-    Image,
-    SafeAreaView,
-    Button,
-    TouchableOpacity,
-    ImageBackground
 } from 'react-native';
 import styles from './style';
 const Banner = require('../../assets/images/bhim-rao-ambedkar-01.png');
