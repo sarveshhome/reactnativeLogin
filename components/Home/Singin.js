@@ -14,7 +14,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import styles from './style';
 
-const logo = require('../../assets/images/logo.png');
+const logo = require('../../assets/images/BharatPetroieum.png');
 const facebook = require('../../assets/images/facebook.png');
 const linkedin = require('../../assets/images/circle-linkedin-512.webp');
 
